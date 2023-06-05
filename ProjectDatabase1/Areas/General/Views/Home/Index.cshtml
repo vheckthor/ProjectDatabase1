@@ -1,0 +1,34 @@
+﻿@model ProjectIndexVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="heroSection">
+
+    <div class="text-content text-center">
+        <h1 class="hero-title fw-bold w-75 m-auto">An End to Final Year Project Topic Repitition</h1>
+        <p class="mt-3">Solve the world problem through your final year project</p>
+    </div>
+    @{
+        <partial name="_SearchPartialView" model="Model.SearchModel" />
+    }
+</div>
+
+<div id="recentProjects">
+    <h2 class="display-5 text-center fw-normal">Explore Your Recent Project Topics</h2>
+    <div class="row">
+        @foreach(var project in Model.Projects)
+        {
+            <div class="col-lg-4 project-card">
+                <h6 class="pcol-text">@project.ProjectCategory.CategoryName</h6>
+                <p>@project.ProjectTitle</p>
+                <p class="sm-fnt mb-0">
+                    <i class="bi bi-person"></i> &nbsp; @project.ProjectAuthor
+                </p>
+                <p class="sm-fnt">
+                    <i class="bi bi-calendar2-date"></i> &nbsp; @project.DateAdded.ToString("M"), @project.DateAdded.ToString("yyyy");
+                </p>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,117 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.sm-fnt{
+    font-size: .8rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+
+:root {
+    --primary-col: #00A1FF;
+    --light-pcol: #E2F1FA;
+}
+
+.pcol-text {
+    color: var(--primary-col);
+}
+
+.pcol-btn {
+    background-color: var(--primary-col);
+    color: white;
+    border-radius: 12px;
+    margin: 0 15px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 2.1rem;
+    font-weight: bold;
+    line-height: 81px;
+}
+
+.navbar {
+    height: 115px;
+}
+
+#heroSection {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+}
+
+.hero-title {
+    font-size: 4rem;
+}
+
+.mysearch {
+    margin: 30px 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+    .mysearch .bi-search {
+        position: absolute;
+        left: 20%;
+        top: 5px;
+        font-size: 1.8rem;
+        color: var(--primary-col);
+    }
+
+.mysearch-bar {
+    background-color: var(--light-pcol);
+    width: 50%;
+    border-radius: 12px;
+    padding: 14px 60px;
+    border: none;
+    font-size: 1.2rem;
+}
+.my-footer{
+    background-color: var(--light-pcol);
+    padding-top: 100px;
+}
+.my-footer li {
+    margin: 25px 0;
+}
+
+.my-bx-shr{
+    box-shadow: 0 0 10px black;
+    border-radius: 20px;
+    margin: 100px auto;
+}
+.project-card {
+    font-family: 'Raleway', sans-serif;
+    font-weight:500;
+    padding: 60px;
+}

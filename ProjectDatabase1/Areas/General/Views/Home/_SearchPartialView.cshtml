@@ -1,0 +1,12 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model SearchVM
+
+<div class="mysearch">
+    <i class="bi bi-search"></i>
+    <form method="post" asp-action="">
+        <input asp-for="SearchValue" class="mysearch-bar" placeholder="Enter your project topic" />
+        <button class="btn pcol-btn mt-3 ps-5 pe-5" type="submit">Search</button>
+    </form>
+</div>

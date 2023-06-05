@@ -1,0 +1,18 @@
+﻿@model ProjectCategory
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-lg-7 p-5 my-bx-shr">
+    <h4 class="text-center">Create New Category</h4>
+
+    <form method="post" asp-action="Create">
+    <label class="form-label">Category Name</label>
+    <input asp-for="CategoryName" class="form-control" />
+    <span class="text-danger" asp-validation-for="CategoryName"></span>
+    <div>
+        <button class="btn pcol-btn mt-3 ps-5 pe-5" type="submit">Create</button>
+    </div>
+</form>
+</div>

@@ -1,0 +1,19 @@
+﻿@model ProjectCategory
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="col-lg-7 p-5 my-bx-shr">
+    <form method="post" asp-action="Edit">
+    <h5 class="text-center">Edit Category</h5>
+    <label class="form-label">Category Name</label>
+    <input id="catId" asp-for="Id" hidden />
+    <input id="catName" asp-for="CategoryName" class="form-control" />
+    <span class="text-danger" asp-validation-for="CategoryName"></span>
+    <div>
+        <button class="btn pcol-btn mt-3 ps-5 pe-5" type="submit">Update</button>
+    </div>
+</form>
+</div>
+

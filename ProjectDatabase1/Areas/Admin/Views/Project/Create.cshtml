@@ -1,0 +1,40 @@
+﻿@model ProjectVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-lg-7 p-5 my-bx-shr">
+    <h4 class="text-center">Create New Project</h4>
+
+    <form method="post" asp-action="Create">
+        <div class="mb-2">
+            <label class="form-label">Project Title</label>
+            <input asp-for="Project.ProjectTitle" class="form-control" />
+            <span class="text-danger" asp-validation-for="Project.ProjectTitle"></span>
+        </div>
+        
+        <div class="mb-2">
+            <label class="form-label">Author</label>
+            <input asp-for="Project.ProjectAuthor" class="form-control" />
+            <span class="text-danger" asp-validation-for="Project.ProjectAuthor"></span>
+        </div>
+
+        <div class="mb-2">
+            <label class="form-label">Project Category</label>
+            <select asp-items="@Model.Categories" asp-for="Project.ProjectCategoryId" class="form-select">
+                <option selected disabled>Select Category</option>
+            </select>
+            <span class="text-danger" asp-validation-for="Project.ProjectCategoryId"></span>
+        </div>
+    
+    <div>
+        <button class="btn pcol-btn mt-3 ps-5 pe-5" type="submit">Create</button>
+    </div>
+</form>
+</div>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

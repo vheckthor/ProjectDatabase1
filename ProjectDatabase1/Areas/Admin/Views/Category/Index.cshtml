@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ProjectCategory>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row mt-5">
+    <div class="col-lg-8 m-auto mt-5">
+        <div class="row mb-4">
+            <div class="col">
+                <h1>Project Categories</h1>
+            </div>
+            <div class="col my-auto text-end">
+                <a class="btn pcol-btn" asp-action="Create">
+                    <i class="bi bi-plus-circle me-2"></i>
+                    Add New Category
+                </a>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="w-75">Category Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.CategoryName</td>
+                        <td class="text-center">
+                            <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    
+   
+}

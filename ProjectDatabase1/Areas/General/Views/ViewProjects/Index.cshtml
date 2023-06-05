@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Project>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row">
+    @foreach (var project in Model)
+    {
+        <div class="col-lg-4 project-card">
+            <h6 class="pcol-text">@project.ProjectCategory.CategoryName</h6>
+            <p>@project.ProjectTitle</p>
+            <p class="sm-fnt mb-0">
+                <i class="bi bi-person"></i> &nbsp; @project.ProjectAuthor
+            </p>
+            <p class="sm-fnt">
+                <i class="bi bi-calendar2-date"></i> &nbsp; @project.DateAdded.ToString("M"), @project.DateAdded.ToString("yyyy");
+            </p>
+        </div>
+    }
+</div>

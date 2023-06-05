@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Project>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="col-lg-10 m-auto">
+    <div class="row mt-4 mb-4">
+        <div class="col text-center">
+            <h2>Projects</h2>
+        </div>
+        <div class="col text-center">
+            <a class="btn pcol-btn" asp-action="Create"><i class="bi bi-plus-circle me-2"></i>Add New Project</a>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width:5%">#</th>
+                <th style="width:75%">Project Title</th>
+                <th style="width:10%">Author</th>
+                <th style="width:10%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int idx = 1;
+                foreach(var project in Model)
+                {
+                    <tr>
+                        <td>@idx</td>
+                        <td>@project.ProjectTitle</td>
+                        <td>@project.ProjectAuthor</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@project.Id" class="btn btn-success">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@project.Id" class="btn btn-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    idx++;
+                }
+            }
+        </tbody>
+    </table>
+</div>
